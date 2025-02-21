@@ -28,9 +28,9 @@ return {
     },
   },
 
-  {
-    "mrjones2014/smart-splits.nvim",
-  },
+  -- {
+  --   "mrjones2014/smart-splits.nvim",
+  -- },
   {
     "maxmx03/fluoromachine.nvim",
     -- lazy = false,
