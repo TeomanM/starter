@@ -1,4 +1,12 @@
 local options = {
+  formatters = {
+    caddy = {
+      command = "caddy",
+      args = { "fmt", "-" },
+      stdin = true,
+    },
+  },
+
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },
@@ -6,6 +14,7 @@ local options = {
     typescript = { "prettier" },
     javascript = { "prettier" },
     json = { "prettier" },
+    caddy = { "caddy" },
   },
 
   format_on_save = {

@@ -3,11 +3,14 @@ vim.filetype.add {
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 }
 
+vim.filetype.add {
+  pattern = { ["Caddyfile*"] = "caddy" },
+}
+
 -- No line wraps.
 local o = vim.o
 o.wrap = false
 
--- Relative line number 
+-- Relative line number
 o.number = true
 o.relativenumber = true
-

@@ -21,6 +21,7 @@ return {
         "css",
         "hyprlang",
         "glsl",
+        "caddy",
       },
     },
   },
@@ -69,4 +70,13 @@ return {
       { "<leader>sad", "<cmd>ApidocsOpen<cr>", desc = "Search Api Doc" },
     },
   },
+  -- {
+  --   "brianhuster/live-preview.nvim",
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  --   config = function()
+  --     require("livepreview.config").setup()
+  --   end,
+  -- },
 }
