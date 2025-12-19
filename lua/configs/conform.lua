@@ -15,6 +15,7 @@ local options = {
     javascript = { "prettier" },
     json = { "prettier" },
     caddy = { "caddy" },
+    toml = { "taplo" },
   },
 
   format_on_save = {
