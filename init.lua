@@ -35,3 +35,8 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+if vim.g.neovide then
+  vim.o.guifont = "FiraCode Nerd Font:h11"
+  vim.g.neovide_theme = "auto"
+end
