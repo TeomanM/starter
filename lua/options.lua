@@ -14,3 +14,10 @@ o.wrap = false
 -- Relative line number
 o.number = true
 o.relativenumber = true
+
+
+-- Tab
+o.tabstop = 4
+o.expandtab = true
+o.softtabstop = 4
+o.shiftwidth = 4
