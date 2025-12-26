@@ -15,6 +15,7 @@ local options = {
     javascript = { "prettier" },
     json = { "prettier" },
     caddy = { "caddy" },
+    kdl = { "kdlfmt" },
     toml = { "taplo" },
   },
 
