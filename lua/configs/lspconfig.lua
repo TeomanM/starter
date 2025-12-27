@@ -14,6 +14,7 @@ local servers = {
   "kdlfmt",
   "hyprls",
   "lemminx",
+  "bashls",
 }
 vim.lsp.enable(servers)
 -- read :h vim.lsp.config for changing options of lsp servers
