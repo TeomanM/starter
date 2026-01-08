@@ -9,7 +9,12 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require "configs.nvim-lint"
+    end,
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
