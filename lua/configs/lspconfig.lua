@@ -8,12 +8,12 @@ local servers = {
   "glsl_analyzer",
   "clangd",
   "ruff",
-  "docker_compose_language_service",
   "systemd_lsp",
-  "kdlfmt",
   "hyprls",
   "lemminx",
   "bashls",
+  "taplo",
+  "oxlint",
 }
 vim.lsp.enable(servers)
 -- read :h vim.lsp.config for changing options of lsp servers
