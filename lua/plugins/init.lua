@@ -41,6 +41,7 @@ return {
         "typescript",
         "javascript",
         "yaml",
+        "latex",
       },
     },
   },

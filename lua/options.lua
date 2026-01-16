@@ -15,7 +15,6 @@ o.wrap = false
 o.number = true
 o.relativenumber = true
 
-
 -- Tab
 o.tabstop = 4
 o.expandtab = true
