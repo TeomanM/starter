@@ -37,6 +37,6 @@ vim.schedule(function()
 end)
 
 if vim.g.neovide then
-  vim.o.guifont = "FiraCode Nerd Font:h12"
+  vim.o.guifont = "JetBrainsMono Nerd Font:h12"
   vim.g.neovide_theme = "auto"
 end
