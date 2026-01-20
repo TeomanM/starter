@@ -98,4 +98,9 @@ return {
       { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
     },
   },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^7", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
 }
