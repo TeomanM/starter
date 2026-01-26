@@ -50,6 +50,7 @@ return {
       },
     },
   },
+  -- Themes
   {
     "maxmx03/fluoromachine.nvim",
     priority = 1000,
@@ -60,7 +61,7 @@ return {
         theme = "fluoromachine",
         transparent = true,
       }
-      vim.cmd.colorscheme "fluoromachine"
+      -- vim.cmd.colorscheme "fluoromachine"
     end,
   },
   {
