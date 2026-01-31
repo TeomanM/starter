@@ -37,6 +37,7 @@ return {
         "dockerfile",
         "json",
         "markdown",
+        "markdown_inline",
         "typescript",
         "javascript",
         "yaml",
@@ -104,5 +105,10 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^7", -- Recommended
     lazy = false, -- This plugin is already lazy
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    opts = {},
   },
 }
