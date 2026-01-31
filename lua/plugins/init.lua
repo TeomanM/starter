@@ -47,6 +47,7 @@ return {
         "zsh",
         "ron",
         "zsh",
+        "commonlisp",
       },
     },
   },
