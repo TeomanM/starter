@@ -64,7 +64,6 @@ return {
         theme = "fluoromachine",
         transparent = true,
       }
-      -- vim.cmd.colorscheme "fluoromachine"
     end,
   },
   {
@@ -112,5 +111,16 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
     ft = { "markdown", "quarto" },
     opts = {},
+  },
+  {
+    "MagicDuck/grug-far.nvim",
+    lazy = false,
+    config = function()
+      -- optional setup call to override plugin options
+      -- alternatively you can set options with vim.g.grug_far = { ... }
+      require("grug-far").setup {
+        -- options, see https://github.com/MagicDuck/grug-far.nvim?tab=readme-ov-file#-installation--configuration
+      }
+    end,
   },
 }
