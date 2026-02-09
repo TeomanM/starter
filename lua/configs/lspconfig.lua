@@ -14,6 +14,9 @@ local servers = {
   "oxlint",
   "docker_language_server",
   "taplo",
+  "qmlls",
 }
+
 vim.lsp.enable(servers)
+
 -- read :h vim.lsp.config for changing options of lsp servers

@@ -50,6 +50,7 @@ return {
         "zsh",
         "commonlisp",
         "nix",
+        "qmljs",
       },
     },
   },
