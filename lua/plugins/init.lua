@@ -10,12 +10,6 @@ return {
     end,
   },
   {
-    "mfussenegger/nvim-lint",
-    config = function()
-      require "configs.nvim-lint"
-    end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
@@ -48,6 +42,7 @@ return {
         "zsh",
         "ron",
         "zsh",
+        "bash",
         "commonlisp",
         "nix",
         "qmljs",
@@ -81,7 +76,6 @@ return {
   },
   {
     "lervag/vimtex",
-    lazy = false, -- we don't want to lazy load VimTeX
     -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
       -- VimTeX configuration goes here, e.g.
@@ -90,7 +84,6 @@ return {
   },
   {
     "NeogitOrg/neogit",
-    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
@@ -123,5 +116,96 @@ return {
         -- options, see https://github.com/MagicDuck/grug-far.nvim?tab=readme-ov-file#-installation--configuration
       }
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      {
+        "grr",
+        "<cmd>Trouble lsp_references toggle<cr>",
+        desc = "LSP References (Trouble)",
+      },
+      {
+        "gri",
+        "<cmd>Trouble lsp_implementations toggle<cr>",
+        desc = "LSP Implementations (Trouble)",
+      },
+      {
+        "<leader>qx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>qX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>qs",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Symbols (Trouble)",
+      },
+      {
+        "<leader>cl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      {
+        "<leader>qL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>qQ",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    },
+  },
+  {
+    "Kenzo-Wada/boundary.nvim",
+    branch = "release",
+    opts = {
+      auto = true, -- automatic refresh enabled by default
+      -- marker_text = "'use client'",
+    },
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  },
+  {
+    "brianhuster/live-preview.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    keys = {
+      { "<leader>pr", "<cmd>LivePreview start<cr>", desc = "Start LivePreview server" },
+    },
+    ft = { "markdown", "html", "asciidoc", "svg" },
+  },
+  {
+    "michaelb/sniprun",
+    branch = "master",
+    build = "sh install.sh",
+    keys = {
+      {
+        "<leader>rs",
+        "<cmd>SnipRun<cr>",
+        desc = "Run selected snippet of code",
+      },
+    },
+  },
+  {
+    "josephschmitt/pj.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    cmd = { "Pj", "PjCd" },
+    keys = {
+      { "<leader>fp", "<cmd>Pj<cr>", desc = "Telescope find projects (global)" },
+    },
+    opts = {
+      picker = { type = "telescope" },
+    },
   },
 }

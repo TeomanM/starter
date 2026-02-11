@@ -22,6 +22,10 @@ vim.lsp.config.qmlls = {
   cmd = { "qmlls", "-E" },
 }
 
+vim.lsp.config.oxlint = {
+  workspace_required = false,
+}
+
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
