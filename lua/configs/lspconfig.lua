@@ -15,6 +15,11 @@ local servers = {
   "docker_language_server",
   "taplo",
   "qmlls",
+  "beautysh",
+}
+
+vim.lsp.config.qmlls = {
+  cmd = { "qmlls", "-E" },
 }
 
 vim.lsp.enable(servers)
