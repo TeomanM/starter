@@ -10,6 +10,13 @@ return {
     end,
   },
   {
+    "nvim-tree/nvim-tree.lua",
+    -- Opts extends default settings
+    opts = {
+      filters = { dotfiles = true },
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
@@ -109,13 +116,9 @@ return {
   {
     "MagicDuck/grug-far.nvim",
     lazy = false,
-    config = function()
-      -- optional setup call to override plugin options
-      -- alternatively you can set options with vim.g.grug_far = { ... }
-      require("grug-far").setup {
-        -- options, see https://github.com/MagicDuck/grug-far.nvim?tab=readme-ov-file#-installation--configuration
-      }
-    end,
+    keys = {
+      { "<leader>gf", "<cmd>GrugFar<cr>", desc = "Search & Replace" },
+    },
   },
   {
     "folke/trouble.nvim",

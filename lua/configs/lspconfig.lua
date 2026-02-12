@@ -16,6 +16,7 @@ local servers = {
   "taplo",
   "qmlls",
   "beautysh",
+  "jsonls",
 }
 
 vim.lsp.config.qmlls = {
