@@ -36,7 +36,6 @@ vim.schedule(function()
 	require "mappings"
 end)
 
--- if vim.g.neovide then
---   -- vim.o.guifont = "Hack:h11"
---   vim.g.neovide_theme = "auto"
--- end
+if vim.g.neovide then
+	vim.g.experimental_layer_grouping = true
+end
