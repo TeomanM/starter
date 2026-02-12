@@ -6,13 +6,13 @@
 local M = {}
 
 M.base46 = {
-  theme = "flouromachine",
+	theme = "flouromachine",
 }
 
 M.ui = {
-  statusline = {
-    separator_style = "round",
-  },
+	statusline = {
+		separator_style = "round",
+	},
 }
 
 return M

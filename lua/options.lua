@@ -1,10 +1,10 @@
 require "nvchad.options"
 vim.filetype.add {
-  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 }
 
 vim.filetype.add {
-  pattern = { ["Caddyfile"] = "caddy" },
+	pattern = { ["Caddyfile"] = "caddy" },
 }
 
 -- No line wraps.
