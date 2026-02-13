@@ -56,19 +56,6 @@ return {
 			},
 		},
 	},
-	-- Themes
-	{
-		"maxmx03/fluoromachine.nvim",
-		priority = 1000,
-		config = function()
-			local fm = require "fluoromachine"
-			fm.setup {
-				glow = true,
-				theme = "fluoromachine",
-				transparent = true,
-			}
-		end,
-	},
 	{
 		"vuki656/package-info.nvim",
 	},
@@ -290,5 +277,21 @@ return {
 			require("telescope").setup(opts)
 			require("telescope").load_extension "undo"
 		end,
+	},
+	{
+		"saxon1964/neovim-tips",
+		version = "*", -- Only update on tagged releases
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"MeanderingProgrammer/render-markdown.nvim", -- Clean rendering
+		},
+		opts = {
+			daily_tip = 0,
+			bookmark_symbol = "🌟 ",
+		},
+		keys = {
+			{ "<leader>to", ":NeovimTips<CR>", desc = "Tips Open Tips" },
+			{ "<leader>tb", ":NeovimTipsBookmarks<CR>", desc = "Tips Show Bookmarked Tips" },
+		},
 	},
 }
