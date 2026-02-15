@@ -18,43 +18,9 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		opts = {
-			ensure_installed = {
-				"vim",
-				"lua",
-				"vimdoc",
-				"html",
-				"css",
-				"hyprlang",
-				"glsl",
-				"caddy",
-				"kdl",
-				"toml",
-				"xml",
-				"rust",
-				"c",
-				"cpp",
-				"python",
-				"dockerfile",
-				"json",
-				"markdown",
-				"markdown_inline",
-				"typescript",
-				"javascript",
-				"yaml",
-				"latex",
-				"go",
-				"jinja",
-				"kdl",
-				"zsh",
-				"ron",
-				"zsh",
-				"bash",
-				"commonlisp",
-				"nix",
-				"qmljs",
-			},
-		},
+		opts = function()
+			require "configs.treesitter"
+		end,
 	},
 	{
 		"vuki656/package-info.nvim",
@@ -102,7 +68,6 @@ return {
 	},
 	{
 		"MagicDuck/grug-far.nvim",
-		lazy = false,
 		keys = {
 			{ "<leader>gf", "<cmd>GrugFar<cr>", desc = "Search & Replace" },
 		},
@@ -215,36 +180,9 @@ return {
 		init = function()
 			require("telescope").load_extension "yank_history"
 		end,
-		keys = {
-			{ "<leader>p", "<cmd>Telescope yank_history<cr>", mode = { "n", "x" }, desc = "Smart Yank History" },
-			{ "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Smart Yank text" },
-			{ "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Smart Put yanked text after cursor" },
-			{ "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Smart Put yanked text before cursor" },
-			{
-				"gp",
-				"<Plug>(YankyGPutAfter)",
-				mode = { "n", "x" },
-				desc = "Smart Put yanked text after cursor and leave cursor after",
-			},
-			{
-				"gP",
-				"<Plug>(YankyGPutBefore)",
-				mode = { "n", "x" },
-				desc = "Smart Put yanked text before cursor and leave cursor after",
-			},
-			{ "<c-p>", "<Plug>(YankyPreviousEntry)", desc = "Smart Select previous entry through yank history" },
-			{ "<c-n>", "<Plug>(YankyNextEntry)", desc = "Smart Select next entry through yank history" },
-			{ "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Smart Put indented after cursor (linewise)" },
-			{ "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Smart Put indented before cursor (linewise)" },
-			{ "]P", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Smart Put indented after cursor (linewise)" },
-			{ "[P", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Smart Put indented before cursor (linewise)" },
-			{ ">p", "<Plug>(YankyPutIndentAfterShiftRight)", desc = "Smart Put and indent right" },
-			{ "<p", "<Plug>(YankyPutIndentAfterShiftLeft)", desc = "Smart Put and indent left" },
-			{ ">P", "<Plug>(YankyPutIndentBeforeShiftRight)", desc = "Smart Put before and indent right" },
-			{ "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)", desc = "Smart Put before and indent left" },
-			{ "=p", "<Plug>(YankyPutAfterFilter)", desc = "Smart Put after applying a filter" },
-			{ "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Smart Put before applying a filter" },
-		},
+		keys = function()
+			return require "configs.yanky"
+		end,
 	},
 	{
 		"debugloop/telescope-undo.nvim",
@@ -296,8 +234,18 @@ return {
 	},
 	{
 		"m4xshen/hardtime.nvim",
-		lazy = false,
 		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
+	},
+	{
+		"stephansama/fzf-nerdfont.nvim",
+		lazy = true,
+		build = ":FzfNerdfont generate",
+		dependencies = { "ibhagwan/fzf-lua" },
+		cmd = "FzfNerdfont",
+		keys = {
+			{ "<leader>fi", "<CMD>FzfNerdfont<CR>", desc = "Open fzf nerd font picker" },
+		},
 		opts = {},
 	},
 }
