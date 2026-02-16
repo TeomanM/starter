@@ -19,6 +19,8 @@ local options = {
 		caddy = { "caddy" },
 		kdl = { "kdlfmt" },
 		toml = { "taplo" },
+		bash = { "beautysh" },
+		sh = { "beautysh" },
 	},
 
 	-- format_on_save = {

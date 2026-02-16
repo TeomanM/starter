@@ -19,6 +19,7 @@ local servers = {
 	"beautysh",
 	"jsonls",
 	"teal_ls",
+	"yamlls",
 }
 
 vim.lsp.config.qmlls = {
