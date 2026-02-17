@@ -36,11 +36,6 @@ return {
 	},
 	{
 		"lervag/vimtex",
-		-- tag = "v2.15", -- uncomment to pin to a specific release
-		-- init = function()
-		-- 	-- VimTeX configuration goes here, e.g.
-		-- 	-- vim.g.vimtex_view_method = "zathura"
-		-- end,
 	},
 	{
 		"NeogitOrg/neogit",
@@ -201,7 +196,7 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim" },
 		lazy = false,
 		opts = {
-			enabled = true,
+			enabled = false,
 		},
 	},
 	{
@@ -211,7 +206,7 @@ return {
 		dependencies = { "ibhagwan/fzf-lua" },
 		cmd = "FzfNerdfont",
 		keys = {
-			{ "<leader>fi", "<CMD>FzfNerdfont<CR>", desc = "Open fzf nerd font picker" },
+			{ "<leader>fi", "<CMD>FzfNerdfont<CR>", desc = "Telescope fzf nerd font picker" },
 		},
 		opts = {},
 	},

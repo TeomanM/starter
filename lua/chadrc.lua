@@ -12,6 +12,12 @@ M.base46 = {
 M.ui = {
 	statusline = {
 		separator_style = "round",
+		modules = {
+			ft = function()
+				return vim.bo.filetype
+			end,
+		},
+		order = { "mode", "file", "ft", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
 	},
 }
 

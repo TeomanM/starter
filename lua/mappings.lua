@@ -7,7 +7,7 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map(
 	"n",
-	"<leader>sw",
+	"<leader>fs",
 	"<cmd>Telescope find_files search_dirs={'/usr/share/doc/arch-wiki/html/en/'}<cr>",
 	{ desc = "Telescope Search Arch Wiki" }
 )
