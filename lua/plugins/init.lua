@@ -19,20 +19,11 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function()
-			require "configs.treesitter"
+			return require "configs.treesitter"
 		end,
 	},
 	{
 		"vuki656/package-info.nvim",
-	},
-	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-			-- Only one of these is needed.
-			"nvim-telescope/telescope.nvim", -- optional
-		},
 	},
 	{
 		"lervag/vimtex",
@@ -40,19 +31,21 @@ return {
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-			-- Only one of these is needed.
-			"nvim-telescope/telescope.nvim", -- optional
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"nvim-telescope/telescope.nvim",
 		},
 		cmd = "Neogit",
 		keys = {
 			{ "<leader>gg", "<cmd>Neogit<cr>", desc = "󰊢 Show Neogit UI " },
 		},
+		-- opts = {
+		-- 	kind = "auto",
+		-- },
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^7", -- Recommended
+		version = "^7",
 		lazy = false, -- This plugin is already lazy
 	},
 	{
@@ -209,5 +202,18 @@ return {
 			{ "<leader>fi", "<CMD>FzfNerdfont<CR>", desc = "Telescope fzf nerd font picker" },
 		},
 		opts = {},
+	},
+	{
+		"zion-off/mole.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {},
+		keys = function()
+			return require "configs.flash"
+		end,
 	},
 }
