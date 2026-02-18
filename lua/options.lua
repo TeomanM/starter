@@ -20,3 +20,4 @@ o.tabstop = 4
 o.expandtab = true
 o.softtabstop = 4
 o.shiftwidth = 4
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

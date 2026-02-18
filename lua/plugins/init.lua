@@ -1,5 +1,14 @@
 return {
 	{
+		"nvim-telescope/telescope.nvim",
+		opts = {
+			extensions = {
+				persisted = {},
+				undo = {},
+			},
+		},
+	},
+	{
 		"stevearc/conform.nvim",
 		opts = require "configs.conform",
 	},
@@ -151,20 +160,7 @@ return {
 				desc = "undo history",
 			},
 		},
-		opts = {
-			-- don't use `defaults = { }` here, do this in the main telescope spec
-			extensions = {
-				undo = {
-					-- telescope-undo.nvim config, see below
-				},
-				-- no other extensions here, they can have their own spec too
-			},
-		},
-		config = function(_, opts)
-			-- Calling telescope's setup from multiple specs does not hurt, it will happily merge the
-			-- configs for us. We won't use data, as everything is in it's own namespace (telescope
-			-- defaults, as well as each extension).
-			require("telescope").setup(opts)
+		config = function()
 			require("telescope").load_extension "undo"
 		end,
 	},
@@ -215,5 +211,28 @@ return {
 		keys = function()
 			return require "configs.flash"
 		end,
+	},
+
+	{
+		"aronjohanns/smooth-resize.nvim",
+		opts = {},
+		lazy = false,
+	},
+	-- Lua
+	{
+		"olimorris/persisted.nvim",
+		event = "BufReadPre", -- Ensure the plugin loads only when a buffer has been loaded
+		opts = {
+			autoload = true,
+			on_autoload_no_session = function()
+				vim.notify "No existing session to load."
+			end,
+		},
+		init = function()
+			require("telescope").load_extension "persisted"
+		end,
+		keys = {
+			{ "<leader>sf", "<cmd>Telescope persisted<cr>", { desc = "Telescope open saved sessions" } },
+		},
 	},
 }

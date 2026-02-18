@@ -29,7 +29,7 @@ vim.lsp.config.qmlls = {
 vim.lsp.config.teal_ls = {
 	cmd = { "/home/teoman/.luarocks/bin/teal-language-server" },
 }
-
+vim.lsp.inlay_hint.enable(true)
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
