@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
 	{
 		"nvim-telescope/telescope.nvim",
@@ -10,12 +11,12 @@ return {
 	},
 	{
 		"stevearc/conform.nvim",
-		opts = require "configs.conform",
+		opts = require("configs.conform"),
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require "configs.lspconfig"
+			require("configs.lspconfig")
 		end,
 	},
 	{
@@ -28,7 +29,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function()
-			return require "configs.treesitter"
+			return require("configs.treesitter")
 		end,
 	},
 	{
@@ -74,7 +75,7 @@ return {
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		keys = function()
-			return require "configs.trouble"
+			return require("configs.trouble")
 		end,
 	},
 	{
@@ -95,7 +96,7 @@ return {
 			{ "<leader>pr", "<cmd>LivePreview start<cr>", desc = "Start LivePreview server" },
 		},
 		ft = { "markdown", "html", "asciidoc", "svg" },
-		config = {
+		opts = {
 			dynamic_root = true,
 		},
 	},
@@ -139,10 +140,10 @@ return {
 		},
 		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
 		init = function()
-			require("telescope").load_extension "yank_history"
+			require("telescope").load_extension("yank_history")
 		end,
 		keys = function()
-			return require "configs.yanky"
+			return require("configs.yanky")
 		end,
 	},
 	{
@@ -161,7 +162,7 @@ return {
 			},
 		},
 		config = function()
-			require("telescope").load_extension "undo"
+			require("telescope").load_extension("undo")
 		end,
 	},
 	{
@@ -207,9 +208,10 @@ return {
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
+        ---@type Flash.Config
 		opts = {},
 		keys = function()
-			return require "configs.flash"
+			return require("configs.flash")
 		end,
 	},
 
@@ -225,11 +227,11 @@ return {
 		opts = {
 			autoload = true,
 			on_autoload_no_session = function()
-				vim.notify "No existing session to load."
+				vim.notify("No existing session to load.")
 			end,
 		},
 		init = function()
-			require("telescope").load_extension "persisted"
+			require("telescope").load_extension("persisted")
 		end,
 		keys = {
 			{ "<leader>sf", "<cmd>Telescope persisted<cr>", { desc = "Telescope open saved sessions" } },
